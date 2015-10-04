@@ -40,6 +40,7 @@ module TsvBuddy
       line << content.join("\t")
       content = []
     end
+    content
   end
 
 end
