@@ -28,19 +28,8 @@ module TsvBuddy
   # to_tsv: converts @data into tsv string
   # returns: String in TSV format
   def to_tsv
-    header = []
-    @data[0].each_key { |k| header << k }
-
-    content = []
-    line = []
-    @data.each do |record|
-      record.each_value do |val|
-        content << val
-      end
-      line << content.join("\t")
-      content = []
-    end
-    content
+    content = @data.map {|id| id.values.join("\t")}
+    @data[0].keys.join("\t") + "\n" + content + "\n"
   end
 
 end
