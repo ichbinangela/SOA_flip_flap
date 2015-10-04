@@ -9,11 +9,7 @@ module TsvBuddy
   # parameter: tsv - a String in TSV format
   def take_tsv(tsv)
     @data = []
-    tsv_lines = []
-    tsv.each_line do |line|
-      tsv_lines << line
-    end
-    
+    tsv_lines = tsv.split("\n")    
     keys = tsv_lines[0].split("\t")
     tsv_lines.shift
     tsv_lines.each do |line|
