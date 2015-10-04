@@ -15,7 +15,7 @@ module TsvBuddy
     tsv_lines.each do |line|
       values = line.split("\t")
       record = {}
-      keys.each_index { |index| record[keys[index].chomp] = values[index].chomp }
+      keys.each_index { |index, value| record[keys[value].chomp] = index.chomp }
       @data << record
     end
     @data
